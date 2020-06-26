@@ -10,7 +10,7 @@ const Rules = () => {
           mathematician, John Conway. It is a zero-player game, meaning that its
           evolution is determined by its initial state. It consists of a grid of
           cells that can live, die or multiply based on a set of mathematical
-          rules. For more info go{" "}
+          rules. For more info go
           <a
             href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
             target="_blank"
@@ -18,6 +18,19 @@ const Rules = () => {
           >
             here!
           </a>
+        </p>
+      </div>
+      <div>
+        <h2>Cellular Automata</h2>
+        <p>
+          A cellular automaton is a discrete model studied in automata theory.
+          Cellular automata are also called cellular spaces, tessellation
+          automata, homogeneous structures, cellular structures, tessellation
+          structures, and iterative arrays.
+        </p>
+        <p>
+          Cellular automata have found application in various areas, including
+          physics, theoretical biology and microstructure modeling.
         </p>
       </div>
       <div className="rules">
