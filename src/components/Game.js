@@ -56,29 +56,39 @@ const Game = () => {
 
   // -- ALGORITHM
 
-  //useCallback hook so the function doesn't run on every render
+  //useCallback hook so the function will run once
   const runSimulation = useCallback(() => {
+    // check!
     if (!runningRef.current) {
       return;
     }
     // -- simulation
-    // I need a double for loop, one to loop throught the rows and another to loop throught the columns
     setGrid((g) => {
+      // g = current value of the grid / the produce function will generate a new grid so we don't mutate any state
       return produce(g, (gridCopy) => {
         for (let i = 0; i < numRows; i++) {
           for (let k = 0; k < numCols; k++) {
+            // check for a cell how many neighbors it has
             let neighbors = 0;
             operations.forEach(([x, y]) => {
               const newI = i + x;
               const newK = k + y;
+              // check we don't go out of boundaries
               if (newI >= 0 && newI < numRows && newK >= 0 && newK < numCols) {
                 neighbors += g[newI][newK];
               }
             });
 
+            // game of life's rules
+
+            // -- Any live cell with fewer than two live neighbours dies and more than three live neighbours dies
+            // -- I should check if the cell is alive first
             if (neighbors < 2 || neighbors > 3) {
+              // this cell dies
               gridCopy[i][k] = 0;
+              // -- Any dead cell with exactly three live neighbours becomes a live cell
             } else if (g[i][k] === 0 && neighbors === 3) {
+              // this cell gets alive
               gridCopy[i][k] = 1;
             }
           }
@@ -214,7 +224,6 @@ const Game = () => {
           style={{
             display: "grid",
             gridTemplateColumns: `repeat(${numCols}, 20px)`,
-            width: "100%",
           }}
         >
           {grid.map((rows, rowIndex) =>

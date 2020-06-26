@@ -20,6 +20,19 @@ const Rules = () => {
           </a>
         </p>
       </div>
+      <div>
+        <h2>Cellular Automata</h2>
+        <p>
+          A cellular automaton is a discrete model studied in automata theory.
+          Cellular automata are also called cellular spaces, tessellation
+          automata, homogeneous structures, cellular structures, tessellation
+          structures, and iterative arrays.
+        </p>
+        <p>
+          Cellular automata have found application in various areas, including
+          physics, theoretical biology and microstructure modeling.
+        </p>
+      </div>
       <div className="rules">
         <h2>Rules</h2>
         <div>
