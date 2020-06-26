@@ -35,7 +35,7 @@ const Game = () => {
 
   // store in state if the simulation is currently running or not
   const [running, setRunning] = useState(false);
-  //create a referece for  running state. Because running will change while our funtion won't change on every render
+  //create a reference for running state. Because running will change while our function won't change on every render
   const runningRef = useRef(running);
   runningRef.current = running;
 
@@ -44,12 +44,12 @@ const Game = () => {
   const generationRef = useRef(generation);
   generationRef.current = generation;
 
-  // set costum speed
+  // set custom speed
   const [speed, setSpeed] = useState(500);
   const speedRef = useRef(speed);
   speedRef.current = speed;
 
-  // set costum grid size
+  // set custom grid size
   const [size, setSize] = useState("25x25");
   const sizeRef = useRef(size);
   sizeRef.current = size;
@@ -160,7 +160,7 @@ const Game = () => {
             }
           }}
         >
-          {running ? "stop" : "start"}
+          {running ? "Stop" : "Start"}
         </button>
         <button
           onClick={() => {
